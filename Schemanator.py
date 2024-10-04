@@ -7,8 +7,13 @@ class KInt(KeyValue):
     def __init__(self, key, value):
         self.value: int = value
 
-    def toJson(self, depth):
-        pass
+    def toJson(self, depth, hasKey):
+        if hasKey:
+            return "\"{}\": {}".format(self.key, self.value)
+
+        else:
+            return "{}".format(self.value)
+
 
     def toJson5(self, depth):
         pass
@@ -26,8 +31,13 @@ class KString(KeyValue):
     def __init__(self, value):
         self.value: string = value
 
-    def toJson(self, depth):
-        pass
+    def toJson(self, depth, hasKey):
+        if hasKey:
+            return "\"{}\": \"{}\"".format(self.key, self.value)
+
+        else:
+            return "\"{}\"".format(self.value)
+
 
     def toJson5(self, depth):
         pass
