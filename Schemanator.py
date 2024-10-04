@@ -77,7 +77,7 @@ class KList(KeyValue):
     def toYaml(self, depth):
         pass
 
-# TODO: Allow extending KDict to require values
+# TODO: Allow extending KDict to require certain values
 class KDict(KeyValue):
     def __init__(self, value):
         self.value: dict = value
